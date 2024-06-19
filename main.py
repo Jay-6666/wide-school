@@ -24,7 +24,7 @@ def query_zhizhu_api(question):
     payload = {
         "model": "glm-4",
         "messages": [
-            {"role": "assistant", "content": "我是智慧校园助手商专"},
+            {"role": "assistant", "content": "我是智慧校园助手"},
             {"role": "user", "content": question},
         ],
         "top_p": 0.7,
@@ -39,7 +39,6 @@ def query_zhizhu_api(question):
 
 def main():
     if menu == menu1:
-        # 使用 st.markdown 来创建一个可点击的标题
         st.markdown('<h2><a href="http://www.hutb.edu.cn/" target="_blank">湖南工商大学</a></h2>', unsafe_allow_html=True)
         showLLMChatbot()
 
@@ -51,7 +50,7 @@ def showLLMChatbot():
     if info:
         st.write("用户: " + info)
         answer = query_zhizhu_api(info)
-        st.write("商: " + answer)
+        st.write("智慧校园助手: " + answer)
 
 if __name__ == '__main__':
     main()
